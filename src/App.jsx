@@ -29,14 +29,14 @@ function App() {
     1: {
       title:langInfo.projects.titles.tpv,
       img: '/tpv.png',
-      stack: ['/javascript.png', '/css.svg', '/html.png'],
+      stack: ['/javascript.png', '/css.svg', '/react.png','/express.png','/node.png','/mongodb.png'],
       description: langInfo.projects.tpv,
       developing:true
     },
     2: {
       title:langInfo.projects.titles.cards,
       img: '/memorygame.png',
-      stack: ['/javascript.png', '/css.svg', '/react.png','/express.png','/node.png','/mongodb.png'],
+      stack: ['/javascript.png', '/css.svg', '/html.png'],
       description: langInfo.projects.cards,
       developing:false
     }
