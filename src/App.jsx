@@ -1,10 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Project from './components/Project'
 import lang from '../json/lang.json'
 let animationPerforming = false
 let swipes = [0, 1] //Start of swipe, end of swipe
-let hideAdvice=false
+let hideAdvice = false
 function App() {
   /**
    * vars and states
@@ -12,22 +11,50 @@ function App() {
   const [xPerspective, setXperspective] = useState('0deg')
   const bgVideo = useRef(null);
   const card = useRef(null);
+  const projects = useRef(null);
   const [timeoutId, setTimeoutId] = useState(null);
   const [yPerspective, setYperspective] = useState('0deg')
   const [currentLang, setLang] = useState(0)
+  const [showProjects, setShowProjects] = useState(false)
   let langInfo;
   currentLang == 0 ? langInfo = lang.es : langInfo = lang.en
+  let projectsToDisplay = {
+    0: {
+      title:langInfo.projects.titles.cfgs,
+      img: '/laravelproject.webp',
+      stack: ['/php2.png', '/laravel.png', '/javascript.png', '/css.svg', '/mysql.png'],
+      description: langInfo.projects.cfgs,
+      developing:false
+    },
+    1: {
+      title:langInfo.projects.titles.tpv,
+      img: '/tpv.png',
+      stack: ['/javascript.png', '/css.svg', '/html.png'],
+      description: langInfo.projects.tpv,
+      developing:true
+    },
+    2: {
+      title:langInfo.projects.titles.cards,
+      img: '/memorygame.png',
+      stack: ['/javascript.png', '/css.svg', '/react.png','/express.png','/node.png','/mongodb.png'],
+      description: langInfo.projects.cards,
+      developing:false
+    }
+  }
   let [currentFace, setCurrentFace] = useState(0)
   let conf = {
     maxDeg: 5
   }
-  useEffect(() => {
+  useEffect(() => { 
     const videoElement = bgVideo.current;
     if (videoElement) {
+      if (!showProjects) {
       videoElement.muted = true;
       videoElement.play()
+      }
+      else videoElement.pause()
     }
-  }, [])
+  }, [showProjects])
   /**
    * 
    */
@@ -39,16 +66,18 @@ function App() {
           e.currentTarget.play()
         }}
       ></video>
-      <div className="banner">
+      <div className="banner"
+        onMouseUp={(e) => {
+          swipes[1] = e.clientX
+          swipes.sort((a, b) => b - a);
+          let substraction = swipes[0] - swipes[1]
+          if (substraction > 150 && swipes[1] > 5) flipCard(0.5)
+          swipes[0] = 0
+          swipes[1] = 0
+        }}>
         <div ref={card} className='card'
           onMouseDown={(e) => {
             swipes[0] = e.clientX
-          }}
-          onMouseUp={(e) => {
-            swipes[1] = e.clientX
-            swipes.sort((a, b) => b - a);
-            let substraction = swipes[0] - swipes[1]
-            if (substraction > 100) flipCard(0.5)
           }}
           onMouseMove={cardMouseMove}
           onMouseLeave={(e) => {
@@ -81,7 +110,11 @@ function App() {
                     </section>
                     <div className="buttons">
                       <button
-                        onClick={() => { flipCard(0.5) }}>{langInfo[1]}</button>
+                        onClick={() => {
+                          setShowProjects(true)
+                          let projectsRef = projects.current
+                          projectsRef.style.top = '0';
+                        }}>{langInfo[1]}</button>
                     </div>
 
                     <section className='flags'>
@@ -90,56 +123,82 @@ function App() {
                     </section>
                   </div>
                 </section>
-                
+
                 <section className='rightSide'>
-                  <h2>Información</h2>
+                  <h2>{langInfo[2]}</h2>
                   <hr />
                   <div className="info">
-                  <div><h3><span>🎂</span>    Fecha de nacimiento</h3>04/03/2003 (21 años)</div>
-                  <div><h3><span>📍</span> De</h3>Estepona (Málaga)</div>
-                  <div><h3><span>🌐</span> Idiomas</h3>Español e Inglés (Intermedio - Avanzado)</div>
-                  <div><h3><span>🧑🏻</span> Hobbies</h3><span>🎶 🎮 🚲</span></div>
+                    <div><h3><span>🎂</span> {langInfo[3]}</h3>04/03/2003 ({langInfo[4]})</div>
+                    <div><h3><span>📍</span> {langInfo[5]}</h3>{langInfo[8]}</div>
+                    <div><h3><span>🌐</span> {langInfo[6]}</h3>{langInfo[7]}</div>
+                    <div><h3><span>🗿</span> Hobbies</h3><span>🎶 🕹️ 🚲</span></div>
                   </div>
-                  <div className="stack"></div>
+                  <h2>{langInfo[9]}</h2>
+                  <hr />
+                  <div className="stack">
+                    <div><h3>Frontend: </h3>
+                      <div className="images">
+                        <img draggable='false' src="/html.png" alt="" />
+                        <img draggable='false' src="/css.svg" alt="" />
+                        <img draggable='false' src="/javascript.png" alt="" />
+                        <img draggable='false' src="/react.png" alt="" />
+                      </div>
+                    </div>
+                    <div><h3>Backend: </h3>
+                      <div className="images">
+                        <img draggable='false' src="/php2.png" alt="" />
+                        <img draggable='false' src="/laravel.png" alt="" />
+                        <img draggable='false' src="/node2.png" alt="" />
+                        <img draggable='false' src="/express.png" alt="" style={{ background: 'white', borderRadius: '100%', padding: '5px', boxSizing: 'border-box' }} />
+                      </div>
+                    </div>
+                    <div><h3>{langInfo[10]}: </h3>
+                      <div className="images">
+                        <img draggable='false' src="/mysql.png" alt="" style={{ background: 'white', boxSizing: 'border-box', padding: '5px' }} />
+                        <img draggable='false' src="/mongodb.png" alt="" style={{ background: '#222222', boxSizing: 'border-box', padding: '2px' }} />
+                      </div>
+                    </div>
+                    <div><h3>CMS: </h3>
+                      <div className="images">
+                        <img draggable='false' src="/wordpress.png" alt="" />
+                        <img draggable='false' src="/elementor.png" alt="" />
+                        <img draggable='false' src="/woocommerce.png" alt="" style={{ height: '35px' }} />
+                        <img draggable='false' src="/gp.png" alt="" style={{ background: '#222222' }} />
+                      </div>
+                    </div>
+                  </div>
                 </section>
               </>
               :
-              <section className='aboutMe'>
-                <h2>Sobre mí</h2>
-                <hr />
-                <p>¡Hola a todos!. Mi nombre es Pablo, y soy desarrollador web. Desde pequeño siempre he tenido un teclado
-                  y un ratón en mis manos, por lo que nunca tuve dudas de que quería dedicarme al mundo de la informática
-                  que, como ya sabemos, es un mundo muy amplio y complejo.
-                </p>
-                <p>
-                  Siempre tuve curiosidad por la programación, así que
-                  por eso decidí estudiar el <b>Ciclo Formativo de Grado Superior de Desarrollo Web</b>, en el <b>I.E.S. Trassierra
-                    (Córdoba)</b>. Aquí fue donde di mis primeros pasos como desarrollador, trabajando con lenguajes como <b>PHP y
-                      Javascript</b>. El ciclo me permitió tener mi primera toma de contacto con el mundo profesional del desarrollo web a
-                  través de la <b>formación en centros de trabajo</b>, en la empresa FourMarketing360.
-                </p>
-                <p>
-                  No solo desempeñé funciones de mantenimiento de código PHP y páginas web, sino que también aprendí a
-                  crear un e-commerce con <b>Wordpress</b>. Para ello utilicé plugins como <b>Woocommerce y Elementor</b>, entre otros. Aunque a
-                  día de hoy estoy aprendiendo otras tecnologías como <b>React y Expressjs</b>, no he perdido el contacto con Wordpress, ya que
-                  me gustó mucho la experiencia trabajando con esta plataforma.
-                </p>
-                <p>
-                  Estoy siempre abierto a nuevas oportunidades y desafíos. Si tienes un proyecto en mente o simplemente quieres conectar, no dudes
-                  en contactarme.
-                </p>
+              <section className='aboutMe' dangerouslySetInnerHTML={{ __html: langInfo.aboutMe}}>
               </section>}
           </div>
         </div>
         {!hideAdvice ? <div className="swipeAdvice">
           <h2>Swipe to flip card</h2>
           <div>
-            
-          <div className='circle'></div>
-          <div className='background'></div>
+
+            <div className='circle'></div>
+            <div className='background'></div>
           </div>
         </div> : null}
       </div >
+      <main className="projects" ref={projects}>
+        <section className='flags'>
+          <img src="/spflag.webp" alt="" onClick={() => { setLang(0) }} />
+          <img src="/ukflag.png" alt="" onClick={() => { setLang(1) }} />
+        </section>
+        <img src="/arrowdown.svg" alt="" className='arrowdown' onClick={() => {
+          setShowProjects(false)
+          let projectsRef = projects.current
+          projectsRef.style.top = '100%';
+        }} />
+        <h2 style={{ fontSize: '50px' }}>{langInfo.projects.title}</h2>
+        <hr />
+        <section className="displayProjects">
+          {Object.values(projectsToDisplay).map((elem, index) => <Project elem={elem} langInfo={{langInfo}} key={index}></Project>)}
+        </section>
+      </main>
     </>
   )
   /**
@@ -148,23 +207,24 @@ function App() {
    * @param {*} direction true = flip from left to right, false = flip from left to right
    */
   function flipCard(seconds) {
-    if(!hideAdvice) document.querySelector('.swipeAdvice').style.opacity='0'
+    let extraTime = 150 //ms
+    if (!hideAdvice) document.querySelector('.swipeAdvice').style.opacity = '0'
     const cardElem = card.current;
     if (!animationPerforming) {
       animationPerforming = true
       let currentTarget = cardElem
       currentTarget.style.animation = `flipLeftSide ${seconds}s forwards linear`;
       setTimeout(() => {
-        hideAdvice=true
+        hideAdvice = true
         setXperspective(0)
         setYperspective(0)
         currentFace == 0 ? setCurrentFace(1) : setCurrentFace(0)
-        setTimeout(()=>{
-        currentTarget.style.animation = `flipRightSide ${seconds}s forwards linear`;
-        },40)
+        setTimeout(() => {
+          currentTarget.style.animation = `flipRightSide ${seconds}s forwards linear`;
+        }, extraTime)
         setTimeout(() => {
           animationPerforming = false
-        }, seconds* 1000 +40);
+        }, seconds * 1000 + extraTime);
       }, seconds * 1000);
     }
   }
@@ -174,22 +234,14 @@ function App() {
       let currentTarget = e.currentTarget
       const rect = e.currentTarget.getBoundingClientRect();
       clearTimeout(timeoutId);
-      // console.log('rect: ', rect);
       let widhtHalf = rect.width / 2
       let heightHalf = rect.height / 2
       let mouseX = e.clientX - rect.left;
       let mouseY = e.clientY - rect.top;
-      /**
-       * calcula porcentaje
-       */
-      let percentage = 0;
       let grados = 0;
-      //percentage=(conf.maxDeg*mouseX)/widhtHalf
       /**
        * eje X
        */
-      percentage = (mouseX / rect.width) * 100
-      //console.log('percentage: ', percentage);
       grados = conf.maxDeg * (1 - (mouseX / widhtHalf));
       setXperspective(grados + 'deg')
       /**

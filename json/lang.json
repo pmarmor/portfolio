@@ -1,11 +1,54 @@
 {
-    "en":{
-
-        "0":"Full Stack Developer",
-        "1":"My stack and projects"
+    "en": {
+        "0": "Full Stack Developer",
+        "1": "My stack and projects",
+        "2": "Information",
+        "3": "Birthday",
+        "4": "21 years old",
+        "5": "From",
+        "6": "Languages",
+        "7": "Spanish and English (B2 - C1)",
+        "8": "Estepona (Spain)",
+        "9": "Stack",
+        "10": "Database",
+        "aboutMe": "<h2>About me</h2><hr/><p>Hello everyone! My name is Pablo, and I am a web developer. Since I was little, I have always had a keyboard and a mouse in my hands, so I never had any doubts that I had to dedicate myself to the world of computer science, which, as we already know, is a very broad and complex world.</p><p>I have always been curious about programming, so that's why I decided to study the <b>Higher Degree Training Cycle in Web Development</b>, at <b>I.E.S. Trassierra (Córdoba)</b>. This is where I took my first steps as a developer, working with languages like <b>PHP and Javascript</b>. The cycle allowed me to have my first contact with the professional world of web development through <b>work-based training</b>, at the company FourMarketing360.</p><p>I not only performed maintenance tasks on PHP code and web pages, but I also learned to create an e-commerce site with <b>Wordpress</b>. For this, I used plugins like <b>Woocommerce and Elementor</b>, among others. Although I am currently learning other technologies like <b>React and Expressjs</b>, I have not lost contact with Wordpress, as I really enjoyed the experience of working with this platform.</p><p>I am always open to new opportunities and challenges. If you have a project in mind or simply want to connect, feel free to contact me.</p>",
+        "projects": {
+            "developing": "DEVELOPING",
+            "titles": {
+                "cards": "Pokémon memory game",
+                "cfgs": "Final Major Project",
+                "tpv": "Point Of Sell for restaurants"
+            },
+            "title": "Projects",
+            "cards": "The classic memory game with Pokémon cards. Developed with HTML, CSS and vanilla JavaScript, this was one of my first programs. Click <a href='https://pmarmor.github.io/memory_card_game/' target='blank'>here</a> to play.",
+            "cfgs": "The web application is made with HTML, CSS, JavaScript, MySQL and PHP, using Laravel. The application consists of a page where independent video game developers can upload their creations, allowing other users of the platform to download them, write comments and add them to favorites. In addition, it has a user role system, so there are unprivileged users and privileged users. The last one is able to perform some actions such as deleting, creating or changing users roles. More details about the project in the attached <a href='https://youtu.be/UwRlxBFiBYo' target='blank'>video</a>.",
+            "tpv": "This is the new project I'm working on. The main concept is basically a POS (Point-Of-Sale), and it's based on React, MongoDb and Express. Since I'm new on this stack, I'm developing this software in my free time to learn and test myself.<br><br>  Click <a target='blank' href='https://www.youtube.com/playlist?list=PLrfrKiVBsBla_8y2adVcGL-xh3gemyq5V'>here</a> to watch videos about the project"
+        }
     },
-    "es":{
-        "0":"Desarrollador Web",
-        "1":"Tecnologías y proyectos"
+    "es": {
+        "0": "Desarrollador Web",
+        "1": "Tecnologías y proyectos",
+        "2": "Información",
+        "3": "Fecha de nacimiento",
+        "4": "21 años",
+        "5": "De",
+        "6": "Idiomas",
+        "7": "Español e Inglés (Intermedio - Avanzado)",
+        "8": "Estepona (Málaga)",
+        "9": "Tecnologías",
+        "10": "Base de datos",
+        "aboutMe":"<h2>Sobre mí</h2><hr/><p>¡Hola a todos!. Mi nombre es Pablo, y soy desarrollador web. Desde pequeño siempre he tenido un teclado y un ratón en mis manos, por lo que nunca tuve dudas de que quería dedicarme al mundo de la informática que, como ya sabemos, es un mundo muy amplio y complejo.</p><p>Siempre tuve curiosidad por la programación, así que por eso decidí estudiar el <b>Ciclo Formativo de Grado Superior de Desarrollo Web</b>, en el <b>I.E.S. Trassierra (Córdoba)</b>. Aquí fue donde di mis primeros pasos como desarrollador, trabajando con lenguajes como <b>PHP y Javascript</b>. El ciclo me permitió tener mi primera toma de contacto con el mundo profesional del desarrollo web a través de la <b>formación en centros de trabajo</b>, en la empresa FourMarketing360.</p><p>No solo desempeñé funciones de mantenimiento de código PHP y páginas web, sino que también aprendí a crear un e-commerce con <b>Wordpress</b>. Para ello utilicé plugins como <b>Woocommerce y Elementor</b>, entre otros. Aunque a día de hoy estoy aprendiendo otras tecnologías como <b>React y Expressjs</b>, no he perdido el contacto con Wordpress, ya que me gustó mucho la experiencia trabajando con esta plataforma. </p><p> Estoy siempre abierto a nuevas oportunidades y desafíos. Si tienes un proyecto en mente o simplemente quieres conectar, no dudes en contactarme.</p>",
+      "projects": {
+            "developing": "EN DESARROLLO",
+            "title": "Proyectos",
+            "titles": {
+                "cards": "Adivina las parejas de Pokémon",
+                "cfgs": "Proyecto de fin de grado",
+                "tpv": "Terminal Punto de Venta para restaurantes"
+            },
+            "cards": "El clásico juego de adivinar las parejas con cartas de Pokémon. Desarrollado con HTML, CSS Y JavaScript nativo, este fue uno de mis primeros programas desarrollados. Haz clic <a target='blank'href='https://pmarmor.github.io/memory_card_game/'>aquí</a> para jugar.",
+            "cfgs": "La aplicación web está hecha con <b>HTML, CSS, JavaScript, MySQL y PHP</b>, utilizando <b>Laravel</b>. La aplicación consiste en una página donde los desarrolladores independientes de videojuegos pueden subir sus creaciones, permitiendo a otros usuarios de la plataforma descargarlas, escribir comentarios y agregarlas a favoritos. Además, cuenta con un <b>sistema de roles de usuario</b>, por lo que hay usuarios sin privilegios y usuarios con privilegios. Estos últimos pueden realizar algunas acciones como eliminar, crear o cambiar roles de usuarios. Más detalles en el <a href='https://youtu.be/UwRlxBFiBYo' target='blank'>vídeo</a> adjunto.",
+            "tpv": "Este es el nuevo proyecto en el que estoy trabajando. Consiste básicamente en un TPV (Terminal Punto de Venta), y está basado en React, MongoDb y Express. Como soy nuevo trabajando con estas tecnologías, estoy desarrollando el programa en mi tiempo libre para aprender y ponerme a prueba.<br><br> Haz clic <a target='blank' href='https://www.youtube.com/playlist?list=PLrfrKiVBsBla_8y2adVcGL-xh3gemyq5V'>aquí</a> para ver el proyecto"
+        }
     }
 }
