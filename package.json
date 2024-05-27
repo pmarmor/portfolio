@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.5.0",
   "type": "module",
-  "homepage": "https://pmarmor.github.io/portfolio",
+  "homepage": "http://localhost/dist",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
