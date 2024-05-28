@@ -17,6 +17,7 @@ function App() {
   const [currentLang, setLang] = useState(0)
   const [showProjects, setShowProjects] = useState(false)
   let langInfo;
+  let origin=window.location
   currentLang == 0 ? langInfo = lang.es : langInfo = lang.en
   let projectsToDisplay = {
     0: {
@@ -60,7 +61,7 @@ function App() {
    */
   return (
     <>
-      <video src="/Sin título.mp4" className='backgroundVideo' ref={bgVideo}
+      <video src={origin+"Sin título.mp4"} className='backgroundVideo' ref={bgVideo}
         onEnded={(e) => {
           e.currentTarget.currentTime = 0;
           e.currentTarget.play()
@@ -68,6 +69,7 @@ function App() {
       ></video>
       <div className="banner"
         onMouseUp={(e) => {
+          console.log('up');
           swipes[1] = e.clientX
           swipes.sort((a, b) => b - a);
           let substraction = swipes[0] - swipes[1]
@@ -98,15 +100,15 @@ function App() {
               <>
                 <section className='leftSide'>
                   <div className='profileDiv'>
-                    <img src="/foto_carnet.jpg" alt="" draggable='false' />
+                    <img src={origin+"/foto_carnet.jpg"} alt="" draggable='false' />
                   </div>
                   <div className='info'>
                     <h2>Pablo Martín</h2>
                     <h3>{langInfo[0]}</h3>
                     <section className='socialMedia'>
-                      <a href=""><img src="/youtube.png" alt="" /></a>
-                      <a href="https://github.com/pmarmor" target='blank'><img src="/github.png" alt="" /></a>
-                      <a href="https://www.linkedin.com/in/pablo-mart%C3%ADn-morente-96935b2a9/" target='blank'><img src="/linkedin.webp" alt="" /></a>
+                      <a href=""><img src={origin+"/youtube.png" }alt="" /></a>
+                      <a href="https://github.com/pmarmor" target='blank'><img src={origin+"/github.png"} alt="" /></a>
+                      <a href="https://www.linkedin.com/in/pablo-mart%C3%ADn-morente-96935b2a9/" target='blank'><img src={origin+"/linkedin.webp"} alt="" /></a>
                     </section>
                     <div className="buttons">
                       <button
@@ -118,8 +120,8 @@ function App() {
                     </div>
 
                     <section className='flags'>
-                      <img src="/spflag.webp" alt="" onClick={() => { setLang(0) }} />
-                      <img src="/ukflag.png" alt="" onClick={() => { setLang(1) }} />
+                      <img src={origin+"/spflag.webp"} alt="" onClick={() => { setLang(0) }} />
+                      <img src={origin+"/ukflag.png" }alt="" onClick={() => { setLang(1) }} />
                     </section>
                   </div>
                 </section>
@@ -138,32 +140,32 @@ function App() {
                   <div className="stack">
                     <div><h3>Frontend: </h3>
                       <div className="images">
-                        <img draggable='false' src="/html.png" alt="" />
-                        <img draggable='false' src="/css.svg" alt="" />
-                        <img draggable='false' src="/javascript.png" alt="" />
-                        <img draggable='false' src="/react.png" alt="" />
+                        <img draggable='false' src={origin+"/html.png"} alt="" />
+                        <img draggable='false' src={origin+"/css.svg" } alt="" />
+                        <img draggable='false' src={origin+"/javascript.png" } alt="" />
+                        <img draggable='false' src={origin+"/react.png"} alt="" />
                       </div>
                     </div>
                     <div><h3>Backend: </h3>
                       <div className="images">
-                        <img draggable='false' src="/php2.png" alt="" />
-                        <img draggable='false' src="/laravel.png" alt="" />
-                        <img draggable='false' src="/node2.png" alt="" />
-                        <img draggable='false' src="/express.png" alt="" style={{ background: 'white', borderRadius: '100%', padding: '5px', boxSizing: 'border-box' }} />
+                        <img draggable='false' src={origin+"/php2.png"   }   alt="" />
+                        <img draggable='false' src={origin+"/laravel.png"}   alt="" />
+                        <img draggable='false' src={origin+"/node2.png"  }   alt="" />
+                        <img draggable='false' src={origin+"/express.png"}   alt="" style={{ background: 'white', borderRadius: '100%', padding: '5px', boxSizing: 'border-box' }} />
                       </div>
                     </div>
                     <div><h3>{langInfo[10]}: </h3>
                       <div className="images">
-                        <img draggable='false' src="/mysql.png" alt="" style={{ background: 'white', boxSizing: 'border-box', padding: '5px' }} />
-                        <img draggable='false' src="/mongodb.png" alt="" style={{ background: '#222222', boxSizing: 'border-box', padding: '2px' }} />
+                        <img draggable='false' src={origin+"/mysql.png"  } alt="" style={{ background: 'white', boxSizing: 'border-box', padding: '5px' }} />
+                        <img draggable='false' src={origin+"/mongodb.png"} alt="" style={{ background: '#222222', boxSizing: 'border-box', padding: '2px' }} />
                       </div>
                     </div>
                     <div><h3>CMS: </h3>
                       <div className="images">
-                        <img draggable='false' src="/wordpress.png" alt="" />
-                        <img draggable='false' src="/elementor.png" alt="" />
-                        <img draggable='false' src="/woocommerce.png" alt="" style={{ height: '35px' }} />
-                        <img draggable='false' src="/gp.png" alt="" style={{ background: '#222222' }} />
+                        <img draggable='false' src={origin+"/wordpress.png"  } alt="" />
+                        <img draggable='false' src={origin+"/elementor.png"  } alt="" />
+                        <img draggable='false' src={origin+"/woocommerce.png"} alt="" style={{ height: '35px' }} />
+                        <img draggable='false' src={origin+"/gp.png"         } alt="" style={{ background: '#222222' }} />
                       </div>
                     </div>
                   </div>
@@ -185,10 +187,10 @@ function App() {
       </div >
       <main className="projects" ref={projects}>
         <section className='flags'>
-          <img src="/spflag.webp" alt="" onClick={() => { setLang(0) }} />
-          <img src="/ukflag.png" alt="" onClick={() => { setLang(1) }} />
+          <img src={origin+"/spflag.webp"} alt="" onClick={() => { setLang(0) }} />
+          <img src={origin+"/ukflag.png" }alt="" onClick={() => { setLang(1) }} />
         </section>
-        <img src="/arrowdown.svg" alt="" className='arrowdown' onClick={() => {
+        <img src={origin+"/arrowdown.svg"} alt="" className='arrowdown' onClick={() => {
           setShowProjects(false)
           let projectsRef = projects.current
           projectsRef.style.top = '100%';
@@ -230,7 +232,6 @@ function App() {
   }
   function cardMouseMove(e) {
     if (!animationPerforming) {
-      setXperspective(0)
       let currentTarget = e.currentTarget
       const rect = e.currentTarget.getBoundingClientRect();
       clearTimeout(timeoutId);
@@ -254,6 +255,9 @@ function App() {
         currentTarget.children[0].classList.remove('animation')
       }, 1);
     }
+  }
+  function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
   }
 }
 
