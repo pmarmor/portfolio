@@ -4,6 +4,7 @@ import lang from '../json/lang.json'
 let animationPerforming = false
 let swipes = [0, 1] //Start of swipe, end of swipe
 let hideAdvice = false
+let bodyRect=document.querySelector('body').getBoundingClientRect()
 function App() {
   /**
    * vars and states
@@ -111,12 +112,18 @@ function App() {
                       <a href="https://www.linkedin.com/in/pablo-mart%C3%ADn-morente-96935b2a9/" target='blank'><img src={origin+"/linkedin.webp"} alt="" /></a>
                     </section>
                     <div className="buttons">
-                      <button
+                    <button
                         onClick={() => {
                           setShowProjects(true)
-                          let projectsRef = projects.current
+                          setTimeout(() => {
+                            let projectsRef = projects.current
                           projectsRef.style.top = '0';
+                          }, 100);
                         }}>{langInfo[1]}</button>
+                        <button className='aboutMeButton'
+                        onClick={() => {
+                          flipCard(0.5)
+                        }}>{langInfo[11]}</button>
                     </div>
 
                     <section className='flags'>
@@ -130,7 +137,7 @@ function App() {
                   <h2>{langInfo[2]}</h2>
                   <hr />
                   <div className="info">
-                    <div><h3><span>🎂</span> {langInfo[3]}</h3>04/03/2003 ({langInfo[4]})</div>
+                    <div><h3><span>🎂</span> {langInfo[3]}</h3>04/03/2003 {langInfo[4]}</div>
                     <div><h3><span>📍</span> {langInfo[5]}</h3>{langInfo[8]}</div>
                     <div><h3><span>🌐</span> {langInfo[6]}</h3>{langInfo[7]}</div>
                     <div><h3><span>🗿</span> Hobbies</h3><span>🎶 🕹️ 🚲</span></div>
@@ -172,8 +179,13 @@ function App() {
                 </section>
               </>
               :
+              <>
+        <img src={origin+'house-solid.svg'} className='backHome'onClick={() => {
+                          flipCard(0.5)
+                        }}/>
               <section className='aboutMe' dangerouslySetInnerHTML={{ __html: langInfo.aboutMe}}>
-              </section>}
+              </section>
+              </>}
           </div>
         </div>
         {!hideAdvice ? <div className="swipeAdvice">
@@ -185,22 +197,25 @@ function App() {
           </div>
         </div> : null}
       </div >
+      { showProjects ? 
       <main className="projects" ref={projects}>
         <section className='flags'>
           <img src={origin+"/spflag.webp"} alt="" onClick={() => { setLang(0) }} />
           <img src={origin+"/ukflag.png" }alt="" onClick={() => { setLang(1) }} />
         </section>
         <img src={origin+"/arrowdown.svg"} alt="" className='arrowdown' onClick={() => {
-          setShowProjects(false)
           let projectsRef = projects.current
-          projectsRef.style.top = '100%';
+          projectsRef.style.top = '100vh';
+          setTimeout(() => {
+          setShowProjects(false)
+          }, 600);
         }} />
         <h2 style={{ fontSize: '50px' }}>{langInfo.projects.title}</h2>
         <hr />
         <section className="displayProjects">
           {Object.values(projectsToDisplay).map((elem, index) => <Project elem={elem} langInfo={{langInfo}} key={index}></Project>)}
         </section>
-      </main>
+      </main>:null}
     </>
   )
   /**
@@ -231,7 +246,7 @@ function App() {
     }
   }
   function cardMouseMove(e) {
-    if (!animationPerforming) {
+    if (!animationPerforming && bodyRect.width>1000) {
       let currentTarget = e.currentTarget
       const rect = e.currentTarget.getBoundingClientRect();
       clearTimeout(timeoutId);
@@ -255,9 +270,6 @@ function App() {
         currentTarget.children[0].classList.remove('animation')
       }, 1);
     }
-  }
-  function isTouchDevice() {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
   }
 }
 

@@ -106,6 +106,9 @@ body {
 }
 
 .card {
+  .backHome{
+    display: none;
+  }
   * {
     user-select: none;
   }
@@ -162,19 +165,13 @@ body {
         border: solid black 1px;
       }
 
-      
+
 
       p {
         gap: 10px;
       }
     }
 
-    @media screen and (-webkit-min-device-pixel-ratio:0) {
-      .aboutMe {
-        scrollbar-color: unset;
-        /* Solo WebKit */
-      }
-    }
 
     .rightSide {
       box-sizing: border-box;
@@ -341,6 +338,9 @@ body {
             font-size: 20px;
             border-radius: 50px;
           }
+          .aboutMeButton{
+            display: none;
+          }
         }
       }
 
@@ -369,10 +369,10 @@ body {
   z-index: 200;
   transition: 0.7s;
   padding: 50px 100px 50px 100px;
-  top: 0%;
-  /*100*/
+  top: 100vh;
   background: #0F0F0F;
-  .flags{
+
+  .flags {
     position: absolute;
     left: 0;
     top: 30%;
@@ -383,12 +383,13 @@ body {
     border-radius: 0 20px 20px 0;
     width: 50px;
     padding-right: 8px;
-    border:solid white ;
-    border-width: 2px 2px 2px 0px ;
+    border: solid white;
+    border-width: 2px 2px 2px 0px;
     height: 100px;
     gap: 10px;
     background-color: #7D5C00;
-    img{
+
+    img {
       cursor: pointer;
       width: 35px;
       height: 35px;
@@ -396,17 +397,18 @@ body {
     }
   }
 
-  .arrowdown{
-      position: absolute;
-      border-radius: 50%;
-      padding: 10px;
-      top: 30px;
-      right:50px;
-      background-color: white;
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
+  .arrowdown {
+    position: absolute;
+    border-radius: 50%;
+    padding: 10px;
+    top: 30px;
+    right: 50px;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
   }
+
   hr {
     border: solid white 1px;
     width: 100%;
@@ -421,9 +423,11 @@ body {
     gap: 70px;
     padding: 40px 40px 20px;
     text-shadow: 0 0 2px black;
-    b{
+
+    b {
       text-shadow: 0 0 2px black;
     }
+
     h2 {
       height: 81px;
       font-size: 27px;
@@ -442,7 +446,8 @@ body {
       background-color: #7D5C00;
       text-align: center;
       position: relative;
-      .developing{
+
+      .developing {
         position: absolute;
         background-color: rgb(39 137 0);
         font-size: 20px;
@@ -453,28 +458,30 @@ body {
         width: 100%;
         transform: rotateZ(30deg) translateX(100px) translateY(-40px);
       }
-      p{
+
+      p {
         margin-top: 10px;
         min-height: 250px;
         max-height: 250px;
         overflow: auto;
         padding: 0 20px;
         scrollbar-color: gray transparent;
+/*
         &::-webkit-scrollbar {
           width: 4px;
         }
-        
+
         &::-webkit-scrollbar-track {
-          background: transparent;
+          background: red;
         }
-        
+
         &::-webkit-scrollbar-thumb {
           height: 20px;
           border-radius: 20px;
           background-color: rgb(133, 133, 133);
-        }
+        }*/
       }
-      
+
       .thumbnail {
         border: solid white 2px;
         border-radius: 10px;
@@ -482,11 +489,13 @@ body {
         height: 185px;
         width: 85%;
       }
-      a{
+
+      a {
         color: white;
         font-weight: bold;
         text-shadow: 0 0 1px #686868;
       }
+
       .stack {
         display: flex;
         justify-content: center;
@@ -582,6 +591,7 @@ body {
     background-color: #f9f9f9;
   }
 }
+/*
 *::-webkit-scrollbar {
   width: 4px;
 }
@@ -594,4 +604,165 @@ body {
   height: 20px;
   border-radius: 20px;
   background-color: rgb(133, 133, 133);
+}*/
+
+@media only screen and (max-width:1000px) {
+  .swipeAdvice{
+    display: none;
+  }
+  .card {
+    width: 90%;
+    height: 410px;
+
+    .content {
+      .leftSide {
+        .info {
+          .flags {
+            margin-bottom: 0;
+          }
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+
+        .profileDiv {
+          width: 150px;
+          height: 150px;
+
+          img {
+            position: relative;
+            top: -12px;
+            height: 148%;
+            border-radius: 0;
+            width: 99%;
+          }
+        }
+      }
+
+      .rightSide {
+        padding: 10px;
+
+        h2 {
+          font-size: 23px;
+        }
+
+        .info {
+
+          padding: 10px 0;
+          width: 89%;
+          max-height: 50%;
+          gap: 10px;
+          display: grid;
+          grid-template-columns: 68% 34%;
+          grid-template-rows: 50% 50%;
+        }
+
+        .info,
+        .stack {
+          max-height: 36%;
+
+          div {
+            font-size: 15px;
+          }
+
+          h3 {
+            font-size: 18px;
+          }
+        }
+
+
+        .stack {
+          gap: 5px;
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:680px) {
+  #root{
+    overflow: auto;
+  }
+  body{
+    overflow: hidden;
+  }
+  .banner{
+    justify-content: unset;
+    align-items: unset;
+  }
+  .projects{
+    padding: 50px 20px;
+    .flags{
+      display: none;
+    }
+    .arrowdown{
+      top:  20px;
+      right: 10px;
+    }
+    .displayProjects{
+      
+      grid-template-columns: repeat(auto-fill, 324px);
+    }
+  }
+  .card {
+    overflow-y: auto;
+    width: 100%;
+    min-height: 120vh;
+    margin-top: unset;
+    .aboutMe{
+      margin-top: 40px !important;
+    }
+    .backHome{
+      display: flex;
+      position:absolute;
+      width:  40px;
+      height: 40px;
+      right: 10px;
+      top: 5px;
+    }
+    .content {
+      overflow-y: hidden;
+      .frontFace{
+        overflow: hidden;
+      }
+      flex-direction: column;
+      width: 100vw;
+      border-radius: 0;
+
+      .leftSide {
+        height: unset;
+        width: 100%;
+        padding-top: 20px;
+        .profileDiv{
+          img{
+            height: 140%;
+          }
+        }
+        .info {
+
+          .buttons {
+            height: 100px;
+            .aboutMeButton{
+              display: initial;
+            }
+          }
+        }
+      }
+      .rightSide{
+        width: 90%;
+        .stack{
+          div:not(div.images) {
+            grid-template-columns: 110px auto;
+            justify-content: start;
+        }
+        }
+      }
+    }
+  }
 }
