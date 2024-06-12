@@ -432,7 +432,9 @@ body {
     gap: 70px;
     padding: 40px 40px 20px;
     text-shadow: 0 0 2px black;
-
+    .buttons{
+      width: 90%;
+    }
     b {
       text-shadow: 0 0 2px black;
     }

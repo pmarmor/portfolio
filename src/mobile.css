@@ -6,7 +6,6 @@
     max-height: 100vh;
     height: 100vh;
     overflow: auto;
-
     .flags {
         display: none;
     }
@@ -21,7 +20,7 @@
         overflow: hidden;
         height: unset;
         box-sizing: border-box;
-
+        padding: 20px 0 70px;
         .buttons {
             width: 80%;
 
@@ -137,7 +136,6 @@
         .projects {
             display: flex;
             flex-direction: column;
-            padding: 20px 0;
             justify-content: center;
             align-items: center;
 

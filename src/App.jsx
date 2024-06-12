@@ -194,7 +194,7 @@ function App() {
             </div>
           </div>
           {!hideAdvice ? <div className="swipeAdvice">
-            <h2>Swipe to flip card</h2>
+            <h2>{langInfo[13]}</h2>
             <div>
 
               <div className='circle'></div>
