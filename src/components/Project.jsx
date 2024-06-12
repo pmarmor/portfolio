@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 function Project(props){
 let elem=props.elem
+console.log('elem: ', elem);
 let lang=props.langInfo.langInfo
 let origin=window.location
 return(
@@ -10,6 +11,9 @@ return(
         <img src={origin+elem.img} alt="" className="thumbnail" />
         <h2>{elem.title}</h2>
         <p dangerouslySetInnerHTML={{ __html: elem.description}}></p>
+        <div className="buttons">
+        <a href={elem.link}>{lang[12]}</a>
+        </div>
         <div className="stack">
             {Object.values(elem.stack).map((stack)=>{
                 let bg=null

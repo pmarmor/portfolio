@@ -106,9 +106,10 @@ body {
 }
 
 .card {
-  .backHome{
+  .backHome {
     display: none;
   }
+
   * {
     user-select: none;
   }
@@ -247,117 +248,125 @@ body {
       }
     }
 
-    .leftSide {
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      min-width: 30%;
-      height: 100%;
-      box-sizing: border-box;
-      padding: 20px 0;
-      align-items: center;
-
-      h3 {
-        margin-top: -3px;
-      }
-
-      .socialMedia {
-        gap: 5px;
-        display: flex;
-        justify-content: center;
-
-        a {
-          align-items: center;
-        }
-
-        img {
-          width: 20px;
-          border-radius: 3px;
-          height: 20px;
-        }
-
-        a:first-of-type img {
-          width: 23px;
-          height: 16px;
-        }
-      }
-
-      .profileDiv {
-        width: 200px;
-        height: 200px;
-        overflow: hidden;
-        display: flex;
-        box-shadow: 0 0 15px rgba(92, 92, 92, 0.336);
-        border-radius: 100%;
-
-        img {
-          position: relative;
-          top: -12px;
-          height: 125%;
-          border-radius: 0;
-        }
-      }
-
-      .info {
-        text-align: center;
-        display: flex;
-        flex-grow: 1;
-        width: 90%;
-        flex-direction: column;
-
-        .flags {
-          margin: 0 auto;
-          display: flex;
-          width: 50%;
-          align-items: center;
-          margin-bottom: 15px;
-          padding: 0;
-          justify-content: space-evenly;
-          height: 50px;
-
-          img {
-            cursor: pointer;
-            height: 30px;
-            width: 30px;
-          }
-        }
-
-        .buttons {
-          display: flex;
-          gap: 10px;
-          width: 100%;
-          flex-direction: column;
-          justify-content: center;
-          height: 100px;
-
-          button {
-            background-color: transparent;
-            padding: 5px;
-            cursor: pointer;
-            border: solid orangered;
-            font-size: 20px;
-            border-radius: 50px;
-          }
-          .aboutMeButton{
-            display: none;
-          }
-        }
-      }
-
-      img {
-        border-radius: 100%;
-        width: 200px;
-        /* box-shadow: 0px 0px 29px -9px rgba(0,0,0,0.75);*/
-        height: 200px;
-      }
-    }
   }
 
   .animation {
     animation: defaultCardPosition 1s ease-out forwards;
   }
+
 }
 
+.leftSide {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px 0;
+  align-items: center;
+
+  h3 {
+    margin-top: -3px;
+  }
+
+  .socialMedia {
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+
+    a {
+      align-items: center;
+    }
+
+    img {
+      width: 20px;
+      border-radius: 3px;
+      height: 20px;
+    }
+
+    a:first-of-type img {
+      width: 23px;
+      height: 16px;
+    }
+  }
+
+  .profileDiv {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 0 15px rgba(92, 92, 92, 0.336);
+    border-radius: 100%;
+
+    img {
+      position: relative;
+      top: -12px;
+      height: 125%;
+      border-radius: 0;
+    }
+  }
+
+  .info {
+    text-align: center;
+    display: flex;
+    flex-grow: 1;
+    width: 90%;
+    flex-direction: column;
+
+    .flags {
+      margin: 0 auto;
+      display: flex;
+      width: 50%;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 0;
+      justify-content: space-evenly;
+      height: 50px;
+
+      img {
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      height: 100px;
+
+      .aboutMeButton {
+        display: none;
+      }
+    }
+  }
+
+  img {
+    border-radius: 100%;
+    width: 200px;
+    /* box-shadow: 0px 0px 29px -9px rgba(0,0,0,0.75);*/
+    height: 200px;
+  }
+}
+.buttons button, .buttons a{
+  display: flex;
+  justify-content: center;
+  font-weight: 500 !important;
+  color: black !important;
+  width: 100%;
+  text-decoration: none;
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+    border: solid orangered;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 50px;
+}
 .projects {
   color: white;
   position: absolute;
@@ -435,6 +444,7 @@ body {
     }
 
     article {
+      row-gap: 20px;
       border: solid white 2px;
       border-radius: 10px;
       overflow: hidden;
@@ -456,7 +466,7 @@ body {
         justify-content: center;
         height: 40px;
         width: 100%;
-        transform: rotateZ(30deg) translateX(100px) translateY(-40px);
+        transform: rotateZ(30deg) translateX(100px) translateY(-40px) !important;
       }
 
       p {
@@ -466,20 +476,6 @@ body {
         overflow: auto;
         padding: 0 20px;
         scrollbar-color: gray transparent;
-/*
-        &::-webkit-scrollbar {
-          width: 4px;
-        }
-
-        &::-webkit-scrollbar-track {
-          background: red;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          height: 20px;
-          border-radius: 20px;
-          background-color: rgb(133, 133, 133);
-        }*/
       }
 
       .thumbnail {
@@ -577,6 +573,8 @@ body {
   }
 }
 
+/*
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -590,26 +588,13 @@ body {
   button {
     background-color: #f9f9f9;
   }
-}
-/*
-*::-webkit-scrollbar {
-  width: 4px;
-}
-
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-  height: 20px;
-  border-radius: 20px;
-  background-color: rgb(133, 133, 133);
 }*/
 
 @media only screen and (max-width:1000px) {
-  .swipeAdvice{
+  .swipeAdvice {
     display: none;
   }
+
   .card {
     width: 90%;
     height: 410px;
@@ -683,86 +668,32 @@ body {
       }
     }
   }
+  .projects{
+    > h2{
+      border-bottom: solid;
+    }
+    .developing{
+
+    }
+  }
 }
 
 @media only screen and (max-width:680px) {
-  #root{
-    overflow: auto;
-  }
-  body{
-    overflow: hidden;
-  }
-  .banner{
-    justify-content: unset;
-    align-items: unset;
-  }
-  .projects{
-    padding: 50px 20px;
-    .flags{
-      display: none;
-    }
-    .arrowdown{
-      top:  20px;
-      right: 10px;
-    }
-    .displayProjects{
-      
-      grid-template-columns: repeat(auto-fill, 324px);
-    }
-  }
-  .card {
-    overflow-y: auto;
-    width: 100%;
-    min-height: 120vh;
-    margin-top: unset;
-    .aboutMe{
-      margin-top: 40px !important;
-    }
-    .backHome{
-      display: flex;
-      position:absolute;
-      width:  40px;
-      height: 40px;
-      right: 10px;
-      top: 5px;
-    }
-    .content {
-      overflow-y: hidden;
-      .frontFace{
-        overflow: hidden;
-      }
-      flex-direction: column;
-      width: 100vw;
-      border-radius: 0;
-
-      .leftSide {
-        height: unset;
-        width: 100%;
-        padding-top: 20px;
-        .profileDiv{
-          img{
-            height: 140%;
-          }
-        }
-        .info {
-
-          .buttons {
-            height: 100px;
-            .aboutMeButton{
-              display: initial;
-            }
-          }
-        }
-      }
-      .rightSide{
-        width: 90%;
-        .stack{
-          div:not(div.images) {
-            grid-template-columns: 110px auto;
-            justify-content: start;
-        }
-        }
-      }
-    }
+  .mobile .projects .article .developing{
+    transform: rotateZ(30deg) translateX(77px) translateY(-36px);
   }
 }
+
+/*
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: gray;
+}*/

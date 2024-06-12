@@ -1,0 +1,162 @@
+.mobile {
+    position: relative;
+    overflow-x: hidden;
+    color: black;
+    background-color: #ffe135;
+    max-height: 100vh;
+    height: 100vh;
+    overflow: auto;
+
+    .flags {
+        display: none;
+    }
+
+    hr {
+        border: solid black 1px;
+    }
+
+    .projects {
+        position: relative;
+        top: unset;
+        overflow: hidden;
+        height: unset;
+        box-sizing: border-box;
+
+        .buttons {
+            width: 80%;
+
+            button,
+            a {
+                width: 100%;
+            }
+        }
+
+        h2 {
+            height: unset;
+            margin-bottom: 0 !important;
+            margin-bottom: 10px;
+        }
+
+        article {
+            .developing {
+                width: 80%;
+                font-size: 18px;
+            }
+
+            p {
+                max-height: unset;
+                min-height: unset;
+            }
+        }
+    }
+
+    .home {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .aboutMe {
+        padding: 20px;
+
+        h2 {
+            font-size: 30px;
+        }
+
+        hr {
+            margin-bottom: 10px;
+        }
+    }
+
+    .rightSide {
+        padding: 25px;
+
+        .stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .images {
+            max-width: 100%;
+            flex-wrap: wrap;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+            img {
+                border-radius: 5px;
+                width: 50px;
+                height: 50px;
+                filter: drop-shadow(0 0 1px black);
+            }
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+    }
+
+    .leftSide {
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .profileDiv {
+            width: 150px;
+            height: 200px;
+
+            img {
+                height: 140%;
+            }
+        }
+
+        .info {
+            .buttons {
+                margin-top: 10px;
+                height: 80px;
+            }
+
+            .aboutMeButton {
+                display: initial;
+            }
+
+            .flags {
+                margin: 5px auto 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .mobile {
+        .projects {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+            justify-content: center;
+            align-items: center;
+
+            .displayProjects {
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                article {
+                    width: 100%;
+                    .developing{
+                        
+                    transform: rotateZ(30deg) translateX(31%) translateY(-40px) !important
+                    }
+                }
+            }
+        }
+    }
+}
