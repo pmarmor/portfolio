@@ -185,7 +185,7 @@ function App() {
                 </>
                 :
                 <>
-                  <img src={origin + 'house-solid.svg'} className='backHome' onClick={() => {
+                  <img src={origin + '/house-solid.svg'} className='backHome' onClick={() => {
                     flipCard(0.5)
                   }} />
                   <section className='aboutMe' dangerouslySetInnerHTML={{ __html: langInfo.aboutMe }}>
