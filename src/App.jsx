@@ -45,6 +45,7 @@ function App() {
       img: '/memorygame.png',
       stack: ['/javascript.png', '/css.svg', '/html.png'],
       description: langInfo.projects.cards,
+      link:'https://pmarmor.github.io/memory_card_game/',
       developing: false
     }
   }
@@ -196,7 +197,7 @@ function App() {
           {!hideAdvice ? <div className="swipeAdvice">
             <h2>{langInfo[13]}</h2>
             <div>
-
+              
               <div className='circle'></div>
               <div className='background'></div>
             </div>

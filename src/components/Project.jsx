@@ -12,7 +12,7 @@ return(
         <h2>{elem.title}</h2>
         <p dangerouslySetInnerHTML={{ __html: elem.description}}></p>
         <div className="buttons">
-        <a href={elem.link}>{lang[12]}</a>
+        <a href={elem.link} target="blank">{lang[12]}</a>
         </div>
         <div className="stack">
             {Object.values(elem.stack).map((stack)=>{

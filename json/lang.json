@@ -42,7 +42,7 @@
         "10": "Base de datos",
         "11": "Sobre mí",
         "12":"Ver más",
-        "13":"Click y desliza para girar el carnet",
+        "13":"Clic y desliza para girar el carnet",
         "aboutMe":"<h2>Sobre mí</h2><hr/><p>¡Hola a todos!. Mi nombre es Pablo, y soy desarrollador web. Desde pequeño siempre he tenido un teclado y un ratón en mis manos, por lo que nunca tuve dudas de que quería dedicarme al mundo de la informática que, como ya sabemos, es un mundo muy amplio y complejo.</p><p>Siempre tuve curiosidad por la programación, así que por eso decidí estudiar el <b>Ciclo Formativo de Grado Superior de Desarrollo Web</b>, en el <b>I.E.S. Trassierra (Córdoba)</b>. Aquí fue donde di mis primeros pasos como desarrollador, trabajando con lenguajes como <b>PHP y Javascript</b>. El ciclo me permitió tener mi primera toma de contacto con el mundo profesional del desarrollo web a través de la <b>formación en centros de trabajo</b>, en la empresa FourMarketing360.</p><p>No solo desempeñé funciones de mantenimiento de código PHP y páginas web, sino que también aprendí a crear un e-commerce con <b>Wordpress</b>. Para ello utilicé plugins como <b>Woocommerce y Elementor</b>, entre otros. Aunque a día de hoy estoy aprendiendo otras tecnologías como <b>React y Expressjs</b>, no he perdido el contacto con Wordpress, ya que me gustó mucho la experiencia trabajando con esta plataforma. </p><p> Estoy siempre abierto a nuevas oportunidades y desafíos. Si tienes un proyecto en mente o simplemente quieres conectar, no dudes en contactarme.</p>",
       "projects": {
             "developing": "EN DESARROLLO",
