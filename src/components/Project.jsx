@@ -2,7 +2,6 @@
 /* eslint-disable react/prop-types */
 function Project(props){
 let elem=props.elem
-console.log('elem: ', elem);
 let lang=props.langInfo.langInfo
 let origin=window.location
 return(
